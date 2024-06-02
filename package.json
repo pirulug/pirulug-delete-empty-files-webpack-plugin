@@ -1,0 +1,21 @@
+{
+  "name": "pirulug-delete-empty-files-webpack-plugin",
+  "version": "0.0.1",
+  "description": "A Webpack plugin to delete empty files from the output directory.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "delete",
+    "empty",
+    "files"
+  ],
+  "author": "Pirulug",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0"
+  }
+}

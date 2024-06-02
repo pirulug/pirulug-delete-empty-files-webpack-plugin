@@ -1,6 +1,5 @@
 const Fs = require("fs");
 const Path = require("path");
-const chalk = require("chalk");
 
 class DeleteEmptyFilesPlugin {
   constructor(baseDir, outputDir) {
@@ -15,7 +14,11 @@ class DeleteEmptyFilesPlugin {
     });
   }
 
-  deleteEmptyFiles(directory) {
+  async deleteEmptyFiles(directory) {
+    const chalk = await import("chalk").then(
+      (module) => module.default || module
+    );
+
     Fs.readdirSync(directory).forEach((file) => {
       const filePath = Path.join(directory, file);
       const stats = Fs.statSync(filePath);

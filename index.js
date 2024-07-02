@@ -19,6 +19,15 @@ class DeleteEmptyFilesPlugin {
       (module) => module.default || module
     );
 
+    if (!Fs.existsSync(directory)) {
+      console.log(
+        chalk.yellow(
+          `Directorio no encontrado: ${directory}, omitiendo eliminación de archivos vacíos.`
+        )
+      );
+      return;
+    }
+
     Fs.readdirSync(directory).forEach((file) => {
       const filePath = Path.join(directory, file);
       const stats = Fs.statSync(filePath);
